@@ -202,14 +202,17 @@ export class VRMExpressionManager {
   /**
    * Update every expressions.
    */
-  public update(): void {
+  public update(options?: { additive?: boolean }): void {
     // see how much we should override certain expressions
     const weightMultipliers = this._calculateWeightMultipliers();
 
-    // reset expression binds first
-    this._expressions.forEach((expression) => {
-      expression.clearAppliedWeight();
-    });
+    // preserve existing weights for additive mode
+    if (!options?.additive) {
+      // reset expression binds first
+      this._expressions.forEach((expression) => {
+        expression.clearAppliedWeight();
+      });
+    }
 
     // then apply binds
     this._expressions.forEach((expression) => {
