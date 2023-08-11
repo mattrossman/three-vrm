@@ -1,6 +1,6 @@
 {
   "name": "@mattrossman/three-vrm",
-  "version": "2.0.1-patch.0",
+  "version": "2.0.1-patch.1",
   "description": "VRM file loader for three.js.",
   "license": "MIT",
   "author": "pixiv",
